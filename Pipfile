@@ -9,6 +9,7 @@ codecov = "*"
 pytest-cov = "*"
 pytest-xdist = "*"
 twine = "*"
+coverage = "*"
 
 [packages]
 attr = "*"
