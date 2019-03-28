@@ -13,6 +13,9 @@ Add a simple golang-esque deferral system for python.
 # Usage
 
 ```
+import defer
+
+
 @defer.with_defer
 def example_function(defer):
     print("Hello")
