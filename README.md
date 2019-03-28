@@ -1,5 +1,12 @@
-# Defer
+[![image](https://img.shields.io/pypi/v/py-defer.svg)](https://pypi.org/project/py-defer/)
+[![image](https://img.shields.io/pypi/l/py-defer.svg)](https://pypi.org/project/py-defer/)
+[![image](https://img.shields.io/pypi/pyversions/py-defer.svg)](https://pypi.org/project/py-defer/)
+[![codecov.io](https://codecov.io/github/naphta/py-defer/coverage.svg?branch=master)](https://codecov.io/github/naphta/py-defer)
+[![image](https://img.shields.io/github/contributors/naphta/py-defer.svg)](https://github.com/naphta/py-defer/graphs/contributors)
+[![image](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/naphta)
 
+Defer
+============
 Add a simple golang-esque deferral system for python.
 
 # Usage

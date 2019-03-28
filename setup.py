@@ -41,7 +41,7 @@ if sys.argv[-1] == "publish":
     os.system("twine upload dist/*")
     sys.exit()
 
-packages = ["with_defer"]
+packages = ["defer"]
 
 requires = [
     "attr>=0.3.1",
@@ -54,7 +54,7 @@ test_requirements = [
 ]
 
 about = {}
-with open(os.path.join(here, "with_defer", "__version__.py"), "r", "utf-8") as f:
+with open(os.path.join(here, "defer", "__version__.py"), "r", "utf-8") as f:
     exec(f.read(), about)
 
 with open("README.md", "r", "utf-8") as f:
@@ -72,8 +72,7 @@ setup(
     author_email=about["__author_email__"],
     url=about["__url__"],
     packages=packages,
-    package_data={"": ["LICENSE", "NOTICE"], "requests": ["*.pem"]},
-    package_dir={"requests": "requests"},
+    package_dir={"defer": "defer"},
     include_package_data=True,
     python_requires=">=3.4",
     install_requires=requires,
@@ -81,6 +80,7 @@ setup(
     zip_safe=False,
     classifiers=[
         "Intended Audience :: Developers",
+        "License :: OSI Approved :: MIT License",
         "Programming Language :: Python",
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.4",
@@ -88,7 +88,6 @@ setup(
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: Implementation :: CPython",
-        "Programming Language :: Python :: Implementation :: PyPy",
     ],
     cmdclass={"test": PyTest},
     tests_require=test_requirements,

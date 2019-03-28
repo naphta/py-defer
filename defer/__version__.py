@@ -1,4 +1,4 @@
-__title__ = 'with-defer'
+__title__ = 'py-defer'
 __description__ = 'Golang-esque defer functionality'
 __url__ = 'http://github.com/naphta/with-defer'
 __version__ = '0.0.1'

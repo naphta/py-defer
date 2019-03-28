@@ -8,6 +8,7 @@ tox = "*"
 codecov = "*"
 pytest-cov = "*"
 pytest-xdist = "*"
+twine = "*"
 
 [packages]
 attr = "*"
