@@ -1,3 +1,8 @@
+1.1.0 (2019-03-28)
+----------------------
+- Add support for coexisting with other decorators in any order.
+- Improve test coverage.
+
 1.0.0 (2019-03-28)
 ----------------------
 - Update defer function to be available globally, as 
