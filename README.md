@@ -4,7 +4,7 @@
 [![travis-ci.org](https://travis-ci.org/naphta/py-defer.svg?branch=master)](https://travis-ci.org/naphta/py-defer)
 [![codecov.io](https://codecov.io/github/naphta/py-defer/coverage.svg?branch=master)](https://codecov.io/github/naphta/py-defer)
 [![image](https://img.shields.io/github/contributors/naphta/py-defer.svg)](https://github.com/naphta/py-defer/graphs/contributors)
-[![image](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/naphta)
+[![image](https://img.shields.io/badge/say%20thanks-!-1EAEDB.svg)](https://saythanks.io/to/naphta)
 
 Defer
 ============

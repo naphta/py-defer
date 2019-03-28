@@ -50,7 +50,7 @@ if sys.argv[-1] == "publish":
 
 packages = ["defer"]
 
-requires = ["attr>=0.3.1"]
+requires = []
 test_requirements = [
     "pytest-cov>=2.6.1",
     "pytest>=4.3.1",
