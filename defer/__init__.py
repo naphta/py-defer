@@ -1,10 +1,11 @@
 import functools
 import contextlib
 import typing
+import inspect
 
 
 class Deferred:
-
+    __slots__ = []
     deferred: typing.List = []
 
     def add(self, f, *args, **kwargs):
@@ -15,26 +16,20 @@ class Deferred:
             f()
 
 
-def _defer(
-    deferred: typing.List[typing.Callable],
-    f: typing.Callable,
-    *args: typing.Tuple,
-    **kwargs: typing.Dict[str, typing.Any]
-):
-    deferred += lambda: f(args=args, kwargs=kwargs)
-
-
 def with_defer(f: typing.Callable):
     @functools.wraps(f)
     def wrapper(*args: typing.Tuple, **kwargs: typing.Dict[str, typing.Any]):
         __deferred__ = Deferred()
-
-        def d(
-            func: typing.Callable, *a: typing.Tuple, **kw: typing.Dict[str, typing.Any]
-        ):
-            __deferred__.add(func, *a, **kw)
-
         with contextlib.closing(__deferred__):
-            return f(defer=d, *args, **kwargs)
+            return f(*args, **kwargs)
 
     return wrapper
+
+
+def defer(f: typing.Callable, *args: typing.Tuple, **kwargs: typing.Dict[str, typing.Any]):
+    # inspect the local variables from 2 functions up
+    # this is to find the wrapped function variables.
+    wrapped_locals = inspect.stack(context=0)[2][0].f_locals
+    if "__deferred__" not in wrapped_locals:
+        raise ValueError("Function not decorated with `defer.with_defer`")
+    wrapped_locals['__deferred__'].add(f, *args, **kwargs)

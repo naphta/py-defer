@@ -4,15 +4,16 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
+twine = "*"
 tox = "*"
-codecov = "*"
 pytest-cov = "*"
 pytest-xdist = "*"
-twine = "*"
+pytest-mypy = "*"
 coverage = "*"
+codecov = "*"
+mypy = "*"
 
 [packages]
-attr = "*"
 
 [requires]
 python_version = "3.7"

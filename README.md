@@ -17,9 +17,9 @@ import defer
 
 
 @defer.with_defer
-def example_function(defer):
+def example_function():
     print("Hello")
-    defer(print, "!")
+    defer.defer(print, "!")
     print("World")
     
 example_function()
