@@ -1,0 +1,8 @@
+__title__ = 'with-defer'
+__description__ = 'Golang-esque defer functionality'
+__url__ = 'http://github.com/naphta/with-defer'
+__version__ = '0.0.1'
+__author__ = 'Jake Hill'
+__author_email__ = 'jake@naphta.uk'
+__license__ = 'MIT'
+__copyright__ = 'Copyright 2018 Jake Hill'
