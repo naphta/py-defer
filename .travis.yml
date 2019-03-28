@@ -1,11 +1,10 @@
 language: python
 python:
-  - "3.4"
-  - "3.5"
-  - "3.5"
   - "3.6"
   - "3.7"
+  - "pypy3.6"
 cache: pip
+dist: xenial
 install:
   - pip install pipenv
   - pipenv install --dev --system
