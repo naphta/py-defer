@@ -12,6 +12,7 @@ pytest-mypy = "*"
 coverage = "*"
 codecov = "*"
 mypy = "*"
+setuptools = "*"
 
 [packages]
 

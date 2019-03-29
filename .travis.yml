@@ -7,11 +7,15 @@ python:
   - "3.8-dev"
 cache: pip
 dist: xenial
+env:
+  global:
+    - PIPENV_VENV_IN_PROJECT=1
+    - PIPENV_IGNORE_VIRTUALENVS=1
 install:
   - pip install pipenv
-  - pipenv install --dev --system
+  - pipenv install --dev
 script:
-  - pipenv run python setup.py test
-  - pipenv run pytest --cov
+  - pipenv run -- pytest -n auto --boxed --mypy --ignore=setup.py
+  - pipenv run -- pytest --cov=defer
 after_success:
-  - pipenv run codecov
+  - pipenv run -- codecov
