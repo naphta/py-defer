@@ -58,32 +58,37 @@ test_requirements = [
     "pytest-cov>=2.6.1",
 ]
 
-about = {}
-with open(os.path.join(here, "defer", "__version__.py"), "r", "utf-8") as f:
-    exec(f.read(), about)
-
 with open("README.md", "r", "utf-8") as f:
     readme = f.read()
 with open("HISTORY.md", "r", "utf-8") as f:
     history = f.read()
 
+__title__: str = "py-defer"
+__description__: str = "Golang-esque defer functionality"
+__url__: str = "http://github.com/naphta/with-defer"
+__version__: str = "1.1.0"
+__author__: str = "Jake Hill"
+__author_email__: str = "jake@naphta.uk"
+__license__: str = "MIT"
+__copyright__: str = "Copyright 2018 Jake Hill"
+
 
 setup(
-    name=about["__title__"],
-    version=about["__version__"],
-    description=about["__description__"],
+    name=__title__,
+    version=__version__,
+    description=__description__,
     long_description=readme,
     long_description_content_type="text/markdown",
-    author=about["__author__"],
-    author_email=about["__author_email__"],
-    url=about["__url__"],
+    author=__author__,
+    author_email=__author_email__,
+    url=__url__,
     packages=packages,
     package_data={"": ["LICENSE"], "defer": ["*.pyi"]},
     package_dir={"defer": "defer"},
     include_package_data=True,
     python_requires=">=3.6",
     install_requires=requires,
-    license=about["__license__"],
+    license=__license__,
     zip_safe=False,
     classifiers=[
         "Intended Audience :: Developers",
