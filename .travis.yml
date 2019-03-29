@@ -13,7 +13,7 @@ env:
     - PIPENV_IGNORE_VIRTUALENVS=1
 install:
   - pip install pipenv
-  - pipenv install --dev
+  - pipenv install --dev --system
 script:
   - pipenv run -- pytest -n auto --boxed --mypy --ignore=setup.py
   - pipenv run -- pytest --cov=defer
