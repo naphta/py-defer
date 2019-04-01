@@ -1,0 +1,17 @@
+# @prettier
+requirePragma: true
+endOfLine: lf
+tabWidth: 4
+printWidth: 79
+useTabs: false
+singleQuote: true
+bracketSpacing: true
+proseWrap: preserve
+overrides:
+    - files: '*.md'
+      options:
+          parser: markdown
+          tabWidth: 2
+    - files: '*.yaml'
+      options:
+          parser: yaml

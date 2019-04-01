@@ -17,5 +17,7 @@ install:
 script:
   - pipenv run -- pytest -n auto --boxed --mypy --ignore=setup.py
   - pipenv run -- pytest --cov=defer
+  - pipenv run -- coverage xml
 after_success:
   - pipenv run -- codecov
+  - pipenv run -- python-codacy-coverage
