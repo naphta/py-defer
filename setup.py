@@ -1,21 +1,20 @@
 #!/usr/bin/env python
 # Learn more: https://github.com/kennethreitz/setup.py
+import codecs
 import os
 import sys
 
-from codecs import open
-
-from setuptools import setup
-from setuptools.command.test import test as TestCommand
+import setuptools
+import setuptools.command.test
 
 here = os.path.abspath(os.path.dirname(__file__))
 
 
-class PyTest(TestCommand):
+class PyTest(setuptools.command.test.test):
     user_options = [("pytest-args=", "a", "Arguments to pass into py.test")]
 
     def initialize_options(self):
-        TestCommand.initialize_options(self)
+        setuptools.command.test.test.initialize_options(self)
         try:
             from multiprocessing import cpu_count
 
@@ -30,7 +29,7 @@ class PyTest(TestCommand):
             self.pytest_args = ["-n", "1", "--boxed", "--mypy", "--ignore=setup.py"]
 
     def finalize_options(self):
-        TestCommand.finalize_options(self)
+        setuptools.command.test.test.finalize_options(self)
         self.test_args = []
         self.test_suite = True
 
@@ -58,22 +57,22 @@ test_requirements = [
     "pytest-cov>=2.6.1",
 ]
 
-with open("README.md", "r", "utf-8") as f:
+with codecs.open("README.md", "r", "utf-8") as f:
     readme = f.read()
-with open("HISTORY.md", "r", "utf-8") as f:
+with codecs.open("HISTORY.md", "r", "utf-8") as f:
     history = f.read()
 
 __title__: str = "py-defer"
 __description__: str = "Golang-esque defer functionality"
 __url__: str = "http://github.com/naphta/with-defer"
-__version__: str = "1.1.0"
+__version__: str = "1.1.1"
 __author__: str = "Jake Hill"
 __author_email__: str = "jake@naphta.uk"
 __license__: str = "MIT"
 __copyright__: str = "Copyright 2018 Jake Hill"
 
 
-setup(
+setuptools.setup(
     name=__title__,
     version=__version__,
     description=__description__,

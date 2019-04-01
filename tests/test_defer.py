@@ -1,5 +1,6 @@
-import defer
 import functools
+
+import defer
 
 
 def test_single_deferred():

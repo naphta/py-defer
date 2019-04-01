@@ -1,8 +1,8 @@
-import functools
 import contextlib
+import functools
+import inspect
 import types
 import typing
-import inspect
 
 
 class Deferred:
@@ -63,6 +63,6 @@ def defer(f: typing.Callable, *args: typing.Any, **kwargs: typing.Any) -> None:
         if isinstance(local[0].f_locals.get("__deferred__"), Deferred):
             deferred: Deferred = local[0].f_locals["__deferred__"]
             deferred.add(f, *args, **kwargs)
-            return
+            break
     else:
         raise ValueError("Function not decorated with `defer.with_defer`")
