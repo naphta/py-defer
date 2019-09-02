@@ -8,12 +8,13 @@ twine = "*"
 tox = "*"
 pytest-cov = "*"
 pytest-xdist = "*"
-pytest-mypy = "*"
+pytest-mypy = ">=0.4.0"
 coverage = "*"
 codacy-coverage = "*"
 codecov = "*"
 mypy = "*"
 setuptools = "*"
+urllib3 = ">=1.24.2"
 
 [packages]
 
