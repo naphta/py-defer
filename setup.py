@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-# Learn more: https://github.com/kennethreitz/setup.py
 import codecs
 import os
 import sys
@@ -65,11 +64,11 @@ with codecs.open("HISTORY.md", "r", "utf-8") as f:
 __title__: str = "py-defer"
 __description__: str = "Golang-esque defer functionality"
 __url__: str = "http://github.com/naphta/with-defer"
-__version__: str = "1.1.2"
+__version__: str = "1.1.3"
 __author__: str = "Jake Hill"
 __author_email__: str = "jake@naphta.uk"
 __license__: str = "MIT"
-__copyright__: str = "Copyright 2018 Jake Hill"
+__copyright__: str = "Copyright 2020 Jake Hill"
 
 
 setuptools.setup(
