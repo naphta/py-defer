@@ -4,18 +4,15 @@ python:
   - "3.7"
   - "3.8"
 cache: pip
-dist: xenial
-env:
-  global:
-    - PIPENV_VENV_IN_PROJECT=1
-    - PIPENV_IGNORE_VIRTUALENVS=1
+dist: bionic
 install:
   - pip install pipenv
-  - pipenv install --dev --system
+  - pipenv lock --dev -r > requirements.txt
+  - pip install -r requirements.txt
 script:
-  - pipenv run -- pytest -n auto --boxed --mypy --ignore=setup.py
-  - pipenv run -- pytest --cov=defer
-  - pipenv run -- coverage xml
+  - pytest -n auto --boxed --mypy --ignore=setup.py
+  - pytest --cov=defer
+  - coverage xml
 after_success:
-  - pipenv run -- codecov
-  - pipenv run -- python-codacy-coverage
+  - codecov
+  - python-codacy-coverage

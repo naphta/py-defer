@@ -64,7 +64,7 @@ with codecs.open("HISTORY.md", "r", "utf-8") as f:
 __title__: str = "py-defer"
 __description__: str = "Golang-esque defer functionality"
 __url__: str = "http://github.com/naphta/with-defer"
-__version__: str = "1.1.3"
+__version__: str = "1.1.4"
 __author__: str = "Jake Hill"
 __author_email__: str = "jake@naphta.uk"
 __license__: str = "MIT"
